@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器按钮组件测试</title>
+    <link rel="stylesheet" href="./timer-button.css">
+</head>
+<body>
+    <details open>
+        <summary>添加按钮</summary>
+        <form class="form-create-button">
+          <label>初始状态：</label>
+          <input type="radio" name="status" value="true"><label>启用</label>
+          <input type="radio" name="status" value="false" checked><label>禁用</label>
+          <br>
+          <label>禁用时长：</label>
+          <input type="number" min="0" max="100" value="6" autofocus>秒
+          <br>
+          <label>按钮文字：</label>
+          <input type="text" maxlength="5" value="同意" required>
+          <br>
+          <div>
+            <label>事件代码：</label>
+            <textarea cols="30" rows="10">alert('你终于同意了！');</textarea>
+          </div>
+          <input type="submit" value="添加">
+        </form>
+      </details>
+    <div id="main"></div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>    
+    <script src="./timer-button.js"></script>
+    <script>
+        $(function(){
+            var radStatus,
+                $time = $('details input[type="number"]'),
+                $title = $('details input[type="text"]'),
+                $txtCode  = $('details textarea'),
+                $fmButton = $('details form');
+            $fmButton.submit(function(e) {
+                e.preventDefault();
+                radStatus  = $('details input[type="radio"]:checked');
+                $timerButton.show({
+                    tLength: Number($time.val()),
+                    container:'#main',
+                    enable: radStatus.val() === 'true',
+                    title: $title.val()
+                });
+            })
+        })
+    </script>
+</body>
+</html>
