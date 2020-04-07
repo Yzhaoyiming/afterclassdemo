@@ -1,0 +1,49 @@
+.font {
+  z-index: 10;
+}
+
+.font .dialogbox {
+  height: 498px;
+  width: 438px;
+}
+
+.font .main {
+  height: 466px;
+}
+
+.font .main .font-family,
+.font .main .font-style {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.font .main .sample {
+  border-color: white;
+  height: 78px;
+  margin-top: 28px;
+  width: 194px;
+}
+
+.font .main .script {
+  margin-top: 12px;
+}
+
+.font .main select {
+  height: 22px;
+  width: 214px;
+}
+.font .main .font-size {
+  display: inline-block;
+}
+
+.font .main .btn-ok {
+  bottom: 10px;
+  position: absolute;
+  right: 110px;
+}
+
+.font .main .btn-cancel {
+  bottom: 10px;
+  position: absolute;
+  right: 16px;
+}
